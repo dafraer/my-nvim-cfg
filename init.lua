@@ -39,3 +39,10 @@ vim.api.nvim_create_autocmd("BufWritePre", {
     vim.lsp.buf.format()
   end,
 })
+
+--remap some cntrl commands to space 
+vim.keymap.set("n", "<leader>]", vim.lsp.buf.definition, { noremap = true, silent = true })
+vim.keymap.set("n", "<leader>t", "<C-t>", { noremap = true, silent = true })
+
+
+
