@@ -44,5 +44,6 @@ vim.api.nvim_create_autocmd("BufWritePre", {
 vim.keymap.set("n", "<leader>]", vim.lsp.buf.definition, { noremap = true, silent = true })
 vim.keymap.set("n", "<leader>t", "<C-t>", { noremap = true, silent = true })
 
-
+--make it so cursor can freely move around
+set virtualedit=all
 
