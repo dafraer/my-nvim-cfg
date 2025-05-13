@@ -17,3 +17,4 @@ vim.opt.softtabstop = tabsize
 
 -- (Optional) enable smart auto-indenting
 vim.opt.smartindent = true
+

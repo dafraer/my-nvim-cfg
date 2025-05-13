@@ -1,4 +1,4 @@
--- This file greets me in tatar
+-- This file greets me
 
 -- Format greeting
 local t = os.date("*t")
