@@ -3,7 +3,7 @@ require("mycfg")
 
 require'nvim-treesitter.configs'.setup {
   -- A list of parser names, or "all" (the listed parsers MUST always be installed)
-  ensure_installed = { "c", "lua", "vim", "vimdoc", "query", "markdown", "markdown_inline", "go", "c", "javascript", "python"},
+  ensure_installed = { "c", "lua", "vim", "vimdoc", "query", "markdown", "markdown_inline", "go", "javascript", "python", "java", "cpp", "asm"},
 
   -- Install parsers synchronously (only applied to `ensure_installed`)
   sync_install = false,
@@ -28,3 +28,14 @@ require'nvim-treesitter.configs'.setup {
 
 --Enable lsp server for go
 vim.lsp.enable('gopls')
+
+--Check error by lsp using gl keys
+vim.keymap.set("n", "gl", vim.diagnostic.open_float, { desc = "Show diagnostic" })
+
+--format on autosave for go
+vim.api.nvim_create_autocmd("BufWritePre", {
+  pattern = "*.go",
+  callback = function()
+    vim.lsp.buf.format()
+  end,
+})
